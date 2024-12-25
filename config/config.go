@@ -4,14 +4,21 @@ import (
 	"github.com/joho/godotenv"
 	"log"
 	"os"
+	"time"
 )
 
 var (
-	MaxArtists = 10
-	MaxAlbums  = 10
-	MaxTracks  = 10
-	UserAgent  = "LucasVieira/1.0"
-	TOKEN      string
+	AppName = "Discogs App Crawler"
+
+	BaseUrl           = "https://www.discogs.com"
+	MaxArtists        = 10
+	MaxAlbums         = 2
+	UserAgent         = "LucasVieira/1.0"
+	TOKEN             string
+	GenreToSearch     = "hip hop"
+	MaxTextSize       = 50
+	MaxRetries        = 10
+	WaitTimeExecution = 5 * time.Second
 )
 
 func InitConfig() {
